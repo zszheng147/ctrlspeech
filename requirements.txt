@@ -1,0 +1,35 @@
+# Kept in step with the `dependencies` list in pyproject.toml, so `pip install -e .`
+# and `pip install -r requirements.txt` give the same environment.
+#
+# Versions are the ones this release was tested with; lower bounds are given
+# where a newer release is expected to work.
+#
+# Install torch/torchaudio first, matched to your CUDA version:
+#   pip install torch==2.4.1 torchaudio==2.4.1 --index-url https://download.pytorch.org/whl/cu121
+
+torch>=2.2
+torchaudio>=2.2
+
+numpy>=1.26
+scipy>=1.11
+pandas>=2.0
+
+# Audio I/O and analysis
+librosa>=0.10
+soundfile>=0.12
+pyworld>=0.3.4          # F0 extraction (DIO/StoneMask)
+
+# Model
+transformers>=4.51      # Qwen3Config for the AR backbone
+einops>=0.7
+torchdiffeq>=0.2.4      # flow-matching ODE solver in LocDiT
+x-transformers>=1.30
+onnxruntime>=1.17       # CAM++ speaker embedding
+omegaconf>=2.3
+safetensors>=0.4
+huggingface-hub>=0.24
+tqdm>=4.65
+
+# Interactive demo
+panel>=1.5
+bokeh>=3.4

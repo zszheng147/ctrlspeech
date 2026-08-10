@@ -1,0 +1,15 @@
+[
+  {
+    "name": "Dreams",
+    "prompt_wav": "dreams-prompt.wav",
+    "prompt_txt": "dreams-prompt.txt",
+    "target_wav": "dreams-target.wav",
+    "target_txt": "dreams-target.txt",
+    "defaults": {
+      "semitones": 5,
+      "db": 8,
+      "word": "dreams",
+      "ratio": 2.0
+    }
+  }
+]

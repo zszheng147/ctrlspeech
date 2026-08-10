@@ -1,0 +1,50 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ctrlspeech"
+version = "0.1.0"
+description = "Expressive speech synthesis with coarse-to-fine latent control"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+keywords = ["text-to-speech", "tts", "prosody", "speech-synthesis", "diffusion"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Topic :: Multimedia :: Sound/Audio :: Speech",
+]
+
+dependencies = [
+    "torch>=2.2",
+    "torchaudio>=2.2",
+    "numpy>=1.26",
+    "scipy>=1.11",
+    "pandas>=2.0",
+    "librosa>=0.10",
+    "soundfile>=0.12",
+    "pyworld>=0.3.4",
+    "transformers>=4.51",
+    "einops>=0.7",
+    "torchdiffeq>=0.2.4",
+    "x-transformers>=1.30",
+    "onnxruntime>=1.17",
+    "omegaconf>=2.3",
+    "safetensors>=0.4",
+    "huggingface-hub>=0.24",
+    "tqdm>=4.65",
+    # The Panel demo. Kept in the main list rather than an extra so that
+    # `pip install -e .` and `pip install -r requirements.txt` agree.
+    "panel>=1.5",
+    "bokeh>=3.4",
+]
+
+[project.scripts]
+ctrlspeech = "ctrlspeech.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["ctrlspeech*"]
+
+[tool.setuptools.package-data]
+ctrlspeech = ["py.typed"]
